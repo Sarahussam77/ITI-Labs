@@ -1,0 +1,15 @@
+.myClass{
+ 
+   justify-content: center;
+   align-items: center;
+   width: 70%;
+   margin: auto;
+   padding: 25px;
+   
+   padding-left: 20% !important;
+}
+
+
+.block{
+   display: block;
+}
