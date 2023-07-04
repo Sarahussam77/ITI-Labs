@@ -1,0 +1,25 @@
+
+Task2
+
+#!/bin/bash
+
+#script to monitor system load & add it to file system-load
+
+#Exit codes
+# 0:success
+# 1: doesnt run using root
+
+[ "$(id -u)" -eq 0 ] || {
+    echo "must be run by root"
+    exit 1 
+}
+while true
+ do
+        LOAD=$(uptime | awk '{print $10}')
+        DATE=$(date '+%Y-%m-%d %H:%M:%S')
+
+        echo "[$DATE] $LOAD" >> /var/log/system-load
+ sleep 10
+
+done 
+exit 0
